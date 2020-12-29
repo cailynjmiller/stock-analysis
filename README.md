@@ -9,16 +9,16 @@ In 2018, almost all stocks had a negative return, except for ENPH and RUN, whose
 The original script uses a nested loop to loop through all of tickers and the dataset to sum up the daily volumes. Since there are 12 tickers and 3013 rows in each dataset, the data is looped through 36,156(12*3013) rows of data.<br/><br/>
     [copy of code] <br/><br/>
 For both 2017 and 2018, it took approximately 0.5 seconds to loop through all of the data. <br/><br/>
-2017 run-time with original script <br/><br/>
+2017 run-time with original script <br/>
 ![2017 run time](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2017_Not_Refactored.png)<br/><br/>
-2018 run-time with original script <br/><br/>
+2018 run-time with original script <br/>
 ![2018 run time](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2018_Not_Refactored.png)<br/><br/>
 In the new script, I created a variable called tickerIndex which I used in place of "i" when looping through the dataset. I initialized tickerIndex to be 0 so it first goes through the data where the first column is equal to the value of tickers(0), and at the end of the loop adds 1 to the ticker index (tickerIndex = tickerIndex +1) to then loop through the data for tickers(1) and so on. Since the tickers are in the same order as they are in the dataset, it only loops through 3013 rows of data once instead of having to go through it 12 times.
     [copy of code] <br/><br/>
 This method was more efficient than the one used in the first script. For both 2017 and 2018, it only took approximately 0.1 seconds to perform the analysis as opposed to the 0.5 in the first script. This will be very useful when Steve expands the current dataset to include more stocks.<br/><br/>
-2017 run-time with refactored script <br/><br/>
+2017 run-time with refactored script <br/>
 ![2017 run time rf](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2017_Recfactored.png)<br/><br/>
-2018 run-time with refactored script <br/><br/>
+2018 run-time with refactored script <br/>
 ![2018 run time rf](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2018_Refactored.png)<br/><br/>
 ## Summary
 ### What are the advantage and disadvantages of refactoring the code?
