@@ -7,42 +7,7 @@ Generally, all stocks performed better in 2017 than 2018. In 2017, almost all st
 In 2018, almost all stocks had a negative return, except for ENPH and RUN, whose values both went up over 80%. <br/>
 ![2018 performance](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2018%20Results.png) <br/><br/>
 The original script uses a nested loop to loop through all of tickers and the dataset to sum up the daily volumes. Since there are 12 tickers and 3013 rows in each dataset, the data is looped through 36,156(12*3013) rows of data.<br/>
-```Sub AllStocksAnalysis():
-
-    Dim startTime As Single
-    Dim endTime As Single
-    
-    yearValue = InputBox("What year would you like to run the analysis for?")
-    
-    startTime = Timer
-
-'1. Format the output sheet on the "All Stacks Analysis" worksheet
-
-    Worksheets("All Stocks Analysis").Activate
-    
-    Range("A1").Value = "All Stocks (" + yearValue + ")"
-    
-        'create a header row
-    Cells(3, 1).Value = "Ticker"
-    Cells(3, 2).Value = "Total Daily Volume"
-    Cells(3, 3).Value = "Return"
-
-'2. Initialize an array of all tickers
-    
-    Dim tickers(12) As String
-    tickers(0) = "AY"
-    tickers(1) = "CSIQ"
-    tickers(2) = "DQ"
-    tickers(3) = "ENPH"
-    tickers(4) = "FSLR"
-    tickers(5) = "HASI"
-    tickers(6) = "JKS"
-    tickers(7) = "RUN"
-    tickers(8) = "SEDG"
-    tickers(9) = "SPWR"
-    tickers(10) = "TERP"
-    tickers(11) = "VSLR"
-
+```
 '3. Prepare for the analysis of tickers
 '3.a Initialize variables for the starting price and ending price
     
@@ -107,46 +72,7 @@ For both 2017 and 2018, it took approximately 0.5 seconds to loop through all of
 2018 run-time with original script <br/>
 ![2018 run time](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2018_Not_Refactored.png)<br/><br/>
 In the new script, I created a variable called tickerIndex which I used in place of "i" when looping through the dataset. I initialized tickerIndex to be 0 so it first goes through the data where the first column is equal to the value of tickers(0), and at the end of the loop adds 1 to the ticker index (tickerIndex = tickerIndex +1) to then loop through the data for tickers(1) and so on. Since the tickers are in the same order as they are in the dataset, it only loops through 3013 rows of data once instead of having to go through it 12 times.<br/>
-``` Sub AllStocksAnalysisRefactored()
-    Dim startTime As Single
-    Dim endTime  As Single
-
-    yearValue = InputBox("What year would you like to run the analysis on?")
-
-    startTime = Timer
-    
-    'Format the output sheet on All Stocks Analysis worksheet
-    Worksheets("All Stocks Analysis").Activate
-    
-    Range("A1").Value = "All Stocks (" + yearValue + ")"
-    
-    'Create a header row
-    Cells(3, 1).Value = "Ticker"
-    Cells(3, 2).Value = "Total Daily Volume"
-    Cells(3, 3).Value = "Return"
-
-    'Initialize array of all tickers
-    Dim tickers(12) As String
-    
-    tickers(0) = "AY"
-    tickers(1) = "CSIQ"
-    tickers(2) = "DQ"
-    tickers(3) = "ENPH"
-    tickers(4) = "FSLR"
-    tickers(5) = "HASI"
-    tickers(6) = "JKS"
-    tickers(7) = "RUN"
-    tickers(8) = "SEDG"
-    tickers(9) = "SPWR"
-    tickers(10) = "TERP"
-    tickers(11) = "VSLR"
-    
-    'Activate data worksheet
-    Worksheets(yearValue).Activate
-    
-    'Get the number of rows to loop over
-    RowCount = Cells(Rows.Count, "A").End(xlUp).Row
-    
+``` 
     '1a) Create a ticker Index
     Dim tickerIndex As Integer
     tickerIndex = 0
