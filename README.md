@@ -97,7 +97,10 @@ The original script uses a nested loop to loop through all of tickers and the da
             Cells(4 + i, 2).Value = TotalVolume
             Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
 
-Next i ``` <br/><br/>
+Next i 
+``` 
+<br/><br/>
+
 For both 2017 and 2018, it took approximately 0.5 seconds to loop through all of the data. <br/><br/>
 2017 run-time with original script <br/>
 ![2017 run time](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2017_Not_Refactored.png)<br/><br/>
@@ -199,8 +202,9 @@ In the new script, I created a variable called tickerIndex which I used in place
         Cells(4, 2).Value = tickerVolumes(i)
         Cells(4, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1
             
-    Next i ```
-     <br/><br/>
+    Next i 
+ ```
+<br/><br/>
 This method was more efficient than the one used in the first script. For both 2017 and 2018, it only took approximately 0.1 seconds to perform the analysis as opposed to the 0.5 in the first script. This will be very useful when Steve expands the current dataset to include more stocks.<br/><br/>
 2017 run-time with refactored script <br/>
 ![2017 run time rf](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2017_Recfactored.png)<br/><br/>
