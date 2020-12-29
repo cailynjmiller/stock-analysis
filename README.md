@@ -2,11 +2,11 @@
 ## Overview of Project
 Steve initially wanted to create an analysis of the performance of all stocks in the data based on the year inputted. Although we were successful in creating this analysis, Steve wanted to refactor the script to be more efficient for when he expands the dataset to include the entire stock market over the past few years.
 ## Results - Using images and examples of your code, compare the stock performance between 2017 and 2018, as well as the execution times of the original script and the refactored script.
-Generally, all stocks performed better in 2017 than 2018. In 2017, almost all stocks had a positive return, except for TERP, whose value went down 7.2%. <br/><br/>
+Generally, all stocks performed better in 2017 than 2018. In 2017, almost all stocks had a positive return, except for TERP, whose value went down 7.2%. <br/>
 ![2017 perfomance](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2017%20Results.png) <br/><br/>
-In 2018, almost all stocks had a negative return, except for ENPH and RUN, whose values both went up over 80%. <br/><br/>
+In 2018, almost all stocks had a negative return, except for ENPH and RUN, whose values both went up over 80%. <br/>
 ![2018 performance](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2018%20Results.png) <br/><br/>
-The original script uses a nested loop to loop through all of tickers and the dataset to sum up the daily volumes. Since there are 12 tickers and 3013 rows in each dataset, the data is looped through 36,156(12*3013) rows of data.<br/><br/>
+The original script uses a nested loop to loop through all of tickers and the dataset to sum up the daily volumes. Since there are 12 tickers and 3013 rows in each dataset, the data is looped through 36,156(12*3013) rows of data.<br/>
     [copy of code] <br/><br/>
 For both 2017 and 2018, it took approximately 0.5 seconds to loop through all of the data. <br/><br/>
 2017 run-time with original script <br/>
