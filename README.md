@@ -1,6 +1,6 @@
 # Stock Analysis with VBA
 ## Overview of Project
-Steve initially wanted to create an analysis of the performance of all stocks in the data based on the year inputted. Although we were successful in creating this analysis, Steve wanted to refactor the script to be more efficient for when he expands the dataset to include the entire stock market over the past few years.
+Steve initially wanted to create an analysis of the performance of all stocks in the data based on the year inputted. Although we were successful in creating this analysis, Steve wanted to refactor the script to be more efficient for when he expands the dataset. In this case, we measure the efficiency in how much time it takes for the script to run.
 ## Results - Using images and examples of your code, compare the stock performance between 2017 and 2018, as well as the execution times of the original script and the refactored script.
 Generally, all stocks performed better in 2017 than 2018. In 2017, almost all stocks had a positive return, except for TERP, whose value went down 7.2%. <br/>
 ![2017 perfomance](https://github.com/cailynjmiller/stock-analysis/blob/main/Resources/2017%20Results.png) <br/><br/>
